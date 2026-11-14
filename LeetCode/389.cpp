@@ -1,3 +1,10 @@
+class Solution {
+public:
     char findTheDifference(string s, string t) {
-        return static<char>(accumulate(s.begin(), s.end(), 0) - accumulate(t.begin(), t.end(), 0));
+        char k{};
+        for(auto x : s) k ^= x;
+        for(auto x : t) k ^= x;
+        return k;
+
     }
+};
